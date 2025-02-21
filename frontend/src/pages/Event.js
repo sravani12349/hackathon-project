@@ -1,42 +1,105 @@
-import React from "react";
-import './EventManagement.css'; // Ensure this path is correct
+import React, { useState } from 'react';
 
 const Event = () => {
-  return (
-    <div className="event-management">
-      <h1>Event Ticketing & Access Control System</h1>
-      <p>
-        Welcome to our web-based platform for event management, designed to enhance security and efficiency in ticketing and entry processes.
-      </p>
-      <h2>Key Features</h2>
-      <ul>
-        <li>
-          <strong>AI-Based Facial Recognition:</strong> 
-          Fast and secure entry validation through advanced biometric authentication.
-        </li>
-        <li>
-          <strong>Blockchain-Integrated Ticket Verification:</strong> 
-          Eliminate fraud with unique, traceable tickets on the blockchain.
-        </li>
-        <li>
-          <strong>Dynamic QR Codes:</strong> 
-          Secure ticket validation that refreshes after entry to prevent misuse.
-        </li>
-        <li>
-          <strong>Live Tracking of Attendees:</strong> 
-          Efficient crowd management with real-time tracking of attendee movements.
-        </li>
-      </ul>
-      <h2>How It Works</h2>
-      <p>
-        Our system streamlines the ticketing process by integrating cutting-edge technology to ensure a smooth and secure event experience for both organizers and attendees.
-      </p>
-      <h2>Get Started</h2>
-      <p>
-        Join us today and experience hassle-free event management with enhanced security features!
-      </p>
-    </div>
-  );
+    const [events, setEvents] = useState([]);
+    const [eventName, setEventName] = useState('');
+    const [eventDate, setEventDate] = useState('');
+
+    const handleAddEvent = () => {
+        if (eventName && eventDate) {
+            setEvents([...events, { name: eventName, date: eventDate }]);
+            setEventName('');
+            setEventDate('');
+        }
+    };
+
+    return (
+        <div className="event-container">
+            <style>{`
+                .event-container {
+                    max-width: 800px;
+                    margin: auto;
+                    padding: 20px;
+                    background: white;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                    border-radius: 8px;
+                }
+
+                h1 {
+                    color: #4CAF50;
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+
+                .event-form {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 20px;
+                }
+
+                input[type="text"],
+                input[type="date"] {
+                    padding: 10px;
+                    margin: 10px 0;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                    font-size: 1em;
+                }
+
+                button {
+                    padding: 10px;
+                    background-color: #4CAF50;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 1em;
+                    transition: background-color 0.3s ease;
+                }
+
+                button:hover {
+                    background-color: #45a049;
+                }
+
+                ul {
+                    list-style-type: none;
+                    padding: 0;
+                }
+
+                li {
+                    padding: 10px;
+                    margin: 5px 0;
+                    background: #f9f9f9;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                }
+            `}</style>
+
+            <h1>Event Management</h1>
+            <div className="event-form">
+                <input
+                    type="text"
+                    placeholder="Event Name"
+                    value={eventName}
+                    onChange={(e) => setEventName(e.target.value)}
+                />
+                <input
+                    type="date"
+                    value={eventDate}
+                    onChange={(e) => setEventDate(e.target.value)}
+                />
+                <button onClick={handleAddEvent}>Add Event</button>
+            </div>
+            <h2>Upcoming Events</h2>
+            <ul>
+                {events.map((event, index) => (
+                    <li key={index}>
+                        {event.name} - {new Date(event.date).toLocaleDateString()}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
 };
 
 export default Event;
