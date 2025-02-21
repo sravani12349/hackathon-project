@@ -1,0 +1,657 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "@ethersproject/abi": {
+      "name": "@ethersproject/abi",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/hash"
+      ],
+      "effects": [
+        "@ethersproject/contracts",
+        "hardhat"
+      ],
+      "range": "5.0.10 - 5.7.0",
+      "nodes": [
+        "node_modules/@ethersproject/abi"
+      ],
+      "fixAvailable": false
+    },
+    "@ethersproject/abstract-provider": {
+      "name": "@ethersproject/abstract-provider",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/transactions"
+      ],
+      "effects": [
+        "@ethersproject/abstract-signer",
+        "@ethersproject/contracts"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@ethersproject/abstract-provider"
+      ],
+      "fixAvailable": false
+    },
+    "@ethersproject/abstract-signer": {
+      "name": "@ethersproject/abstract-signer",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/abstract-provider"
+      ],
+      "effects": [
+        "@ethersproject/hash"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@ethersproject/abstract-signer"
+      ],
+      "fixAvailable": false
+    },
+    "@ethersproject/contracts": {
+      "name": "@ethersproject/contracts",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/abi",
+        "@ethersproject/abstract-provider",
+        "@ethersproject/abstract-signer",
+        "@ethersproject/transactions"
+      ],
+      "effects": [
+        "ethers"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@ethersproject/contracts"
+      ],
+      "fixAvailable": true
+    },
+    "@ethersproject/hash": {
+      "name": "@ethersproject/hash",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/abstract-signer"
+      ],
+      "effects": [
+        "@ethersproject/abi",
+        "@ethersproject/providers",
+        "@ethersproject/wallet",
+        "@ethersproject/wordlists",
+        "ethers"
+      ],
+      "range": "5.0.6 - 5.7.0",
+      "nodes": [
+        "node_modules/@ethersproject/hash"
+      ],
+      "fixAvailable": false
+    },
+    "@ethersproject/hdnode": {
+      "name": "@ethersproject/hdnode",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/abstract-signer",
+        "@ethersproject/signing-key",
+        "@ethersproject/transactions",
+        "@ethersproject/wordlists"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@ethersproject/hdnode"
+      ],
+      "fixAvailable": true
+    },
+    "@ethersproject/json-wallets": {
+      "name": "@ethersproject/json-wallets",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/abstract-signer",
+        "@ethersproject/hdnode",
+        "@ethersproject/transactions"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@ethersproject/json-wallets"
+      ],
+      "fixAvailable": true
+    },
+    "@ethersproject/providers": {
+      "name": "@ethersproject/providers",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/abstract-provider",
+        "@ethersproject/abstract-signer",
+        "@ethersproject/hash",
+        "@ethersproject/transactions",
+        "ws"
+      ],
+      "effects": [
+        "ethers"
+      ],
+      "range": "<=5.7.2",
+      "nodes": [
+        "node_modules/@ethersproject/providers"
+      ],
+      "fixAvailable": true
+    },
+    "@ethersproject/signing-key": {
+      "name": "@ethersproject/signing-key",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "elliptic"
+      ],
+      "effects": [
+        "@ethersproject/hdnode",
+        "@ethersproject/transactions",
+        "@ethersproject/wallet"
+      ],
+      "range": "<=5.7.0",
+      "nodes": [
+        "node_modules/@ethersproject/signing-key"
+      ],
+      "fixAvailable": false
+    },
+    "@ethersproject/transactions": {
+      "name": "@ethersproject/transactions",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/signing-key"
+      ],
+      "effects": [
+        "@ethersproject/abstract-provider",
+        "@ethersproject/contracts",
+        "@ethersproject/json-wallets"
+      ],
+      "range": "<=5.7.0",
+      "nodes": [
+        "node_modules/@ethersproject/transactions"
+      ],
+      "fixAvailable": false
+    },
+    "@ethersproject/wallet": {
+      "name": "@ethersproject/wallet",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/abstract-provider",
+        "@ethersproject/abstract-signer",
+        "@ethersproject/hash",
+        "@ethersproject/hdnode",
+        "@ethersproject/json-wallets",
+        "@ethersproject/signing-key",
+        "@ethersproject/transactions",
+        "@ethersproject/wordlists"
+      ],
+      "effects": [],
+      "range": "<=5.7.0",
+      "nodes": [
+        "node_modules/@ethersproject/wallet"
+      ],
+      "fixAvailable": true
+    },
+    "@ethersproject/wordlists": {
+      "name": "@ethersproject/wordlists",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/hash"
+      ],
+      "effects": [
+        "@ethersproject/hdnode",
+        "ethers"
+      ],
+      "range": "5.0.8 - 5.7.0",
+      "nodes": [
+        "node_modules/@ethersproject/wordlists"
+      ],
+      "fixAvailable": true
+    },
+    "@nomicfoundation/hardhat-chai-matchers": {
+      "name": "@nomicfoundation/hardhat-chai-matchers",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "@nomicfoundation/hardhat-ethers",
+        "hardhat"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-chai-matchers"
+      ],
+      "fixAvailable": true
+    },
+    "@nomicfoundation/hardhat-ethers": {
+      "name": "@nomicfoundation/hardhat-ethers",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "hardhat"
+      ],
+      "effects": [
+        "@nomicfoundation/hardhat-chai-matchers",
+        "@nomicfoundation/hardhat-toolbox"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-ethers"
+      ],
+      "fixAvailable": false
+    },
+    "@nomicfoundation/hardhat-ignition": {
+      "name": "@nomicfoundation/hardhat-ignition",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "@nomicfoundation/hardhat-verify",
+        "hardhat"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-ignition"
+      ],
+      "fixAvailable": true
+    },
+    "@nomicfoundation/hardhat-ignition-ethers": {
+      "name": "@nomicfoundation/hardhat-ignition-ethers",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "@nomicfoundation/hardhat-ethers",
+        "@nomicfoundation/hardhat-ignition",
+        "hardhat"
+      ],
+      "effects": [
+        "@nomicfoundation/hardhat-toolbox"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-ignition-ethers"
+      ],
+      "fixAvailable": false
+    },
+    "@nomicfoundation/hardhat-network-helpers": {
+      "name": "@nomicfoundation/hardhat-network-helpers",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "hardhat"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-network-helpers"
+      ],
+      "fixAvailable": true
+    },
+    "@nomicfoundation/hardhat-toolbox": {
+      "name": "@nomicfoundation/hardhat-toolbox",
+      "severity": "low",
+      "isDirect": true,
+      "via": [
+        "@nomicfoundation/hardhat-chai-matchers",
+        "@nomicfoundation/hardhat-ethers",
+        "@nomicfoundation/hardhat-ignition-ethers",
+        "@nomicfoundation/hardhat-network-helpers",
+        "@nomicfoundation/hardhat-verify",
+        "@typechain/hardhat",
+        "hardhat",
+        "hardhat-gas-reporter",
+        "solidity-coverage"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-toolbox"
+      ],
+      "fixAvailable": false
+    },
+    "@nomicfoundation/hardhat-verify": {
+      "name": "@nomicfoundation/hardhat-verify",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/abi",
+        "hardhat"
+      ],
+      "effects": [
+        "@nomicfoundation/hardhat-ignition"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-verify"
+      ],
+      "fixAvailable": true
+    },
+    "@sentry/node": {
+      "name": "@sentry/node",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "cookie"
+      ],
+      "effects": [
+        "hardhat"
+      ],
+      "range": "4.0.0-beta.0 - 7.74.2-alpha.1",
+      "nodes": [
+        "node_modules/@sentry/node"
+      ],
+      "fixAvailable": false
+    },
+    "@typechain/hardhat": {
+      "name": "@typechain/hardhat",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "hardhat"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@typechain/hardhat"
+      ],
+      "fixAvailable": true
+    },
+    "cookie": {
+      "name": "cookie",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1099846,
+          "name": "cookie",
+          "dependency": "cookie",
+          "title": "cookie accepts cookie name, path, and domain with out of bounds characters",
+          "url": "https://github.com/advisories/GHSA-pxg6-pf52-xh8x",
+          "severity": "low",
+          "cwe": [
+            "CWE-74"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<0.7.0"
+        }
+      ],
+      "effects": [
+        "@sentry/node"
+      ],
+      "range": "<0.7.0",
+      "nodes": [
+        "node_modules/@sentry/node/node_modules/cookie"
+      ],
+      "fixAvailable": false
+    },
+    "elliptic": {
+      "name": "elliptic",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1098593,
+          "name": "elliptic",
+          "dependency": "elliptic",
+          "title": "Elliptic's EDDSA missing signature length check",
+          "url": "https://github.com/advisories/GHSA-f7q4-pwc6-w24p",
+          "severity": "low",
+          "cwe": [
+            "CWE-347"
+          ],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+          },
+          "range": ">=4.0.0 <=6.5.6"
+        },
+        {
+          "source": 1098594,
+          "name": "elliptic",
+          "dependency": "elliptic",
+          "title": "Elliptic's ECDSA missing check for whether leading bit of r and s is zero",
+          "url": "https://github.com/advisories/GHSA-977x-g7h5-7qgw",
+          "severity": "low",
+          "cwe": [
+            "CWE-130"
+          ],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+          },
+          "range": ">=2.0.0 <=6.5.6"
+        },
+        {
+          "source": 1098595,
+          "name": "elliptic",
+          "dependency": "elliptic",
+          "title": "Elliptic allows BER-encoded signatures",
+          "url": "https://github.com/advisories/GHSA-49q7-c7j4-3p7m",
+          "severity": "low",
+          "cwe": [
+            "CWE-347"
+          ],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+          },
+          "range": ">=5.2.1 <=6.5.6"
+        },
+        {
+          "source": 1101387,
+          "name": "elliptic",
+          "dependency": "elliptic",
+          "title": "Valid ECDSA signatures erroneously rejected in Elliptic",
+          "url": "https://github.com/advisories/GHSA-fc9h-whq2-v747",
+          "severity": "low",
+          "cwe": [
+            "CWE-347"
+          ],
+          "cvss": {
+            "score": 4.8,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L"
+          },
+          "range": "<6.6.0"
+        },
+        {
+          "source": 1101424,
+          "name": "elliptic",
+          "dependency": "elliptic",
+          "title": "Elliptic's verify function omits uniqueness validation",
+          "url": "https://github.com/advisories/GHSA-434g-2637-qmqr",
+          "severity": "low",
+          "cwe": [
+            "CWE-347"
+          ],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+          },
+          "range": "<6.5.6"
+        },
+        {
+          "source": 1102309,
+          "name": "elliptic",
+          "dependency": "elliptic",
+          "title": "Elliptic's private key extraction in ECDSA upon signing a malformed input (e.g. a string)",
+          "url": "https://github.com/advisories/GHSA-vjh7-7g9h-fjfh",
+          "severity": "critical",
+          "cwe": [
+            "CWE-200"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<=6.6.0"
+        }
+      ],
+      "effects": [
+        "@ethersproject/signing-key"
+      ],
+      "range": "<=6.6.0",
+      "nodes": [
+        "node_modules/elliptic"
+      ],
+      "fixAvailable": false
+    },
+    "eth-gas-reporter": {
+      "name": "eth-gas-reporter",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "ethers"
+      ],
+      "effects": [],
+      "range": ">=0.2.26",
+      "nodes": [
+        "node_modules/eth-gas-reporter"
+      ],
+      "fixAvailable": true
+    },
+    "ethers": {
+      "name": "ethers",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/abi",
+        "@ethersproject/abstract-provider",
+        "@ethersproject/abstract-signer",
+        "@ethersproject/contracts",
+        "@ethersproject/hash",
+        "@ethersproject/hdnode",
+        "@ethersproject/json-wallets",
+        "@ethersproject/providers",
+        "@ethersproject/signing-key",
+        "@ethersproject/transactions",
+        "@ethersproject/wallet",
+        "@ethersproject/wordlists"
+      ],
+      "effects": [
+        "eth-gas-reporter"
+      ],
+      "range": "5.0.0-beta.119 - 5.7.2",
+      "nodes": [
+        "node_modules/eth-gas-reporter/node_modules/ethers"
+      ],
+      "fixAvailable": true
+    },
+    "hardhat": {
+      "name": "hardhat",
+      "severity": "critical",
+      "isDirect": true,
+      "via": [
+        "@ethersproject/abi",
+        "@sentry/node"
+      ],
+      "effects": [
+        "@nomicfoundation/hardhat-chai-matchers",
+        "@nomicfoundation/hardhat-ethers",
+        "@nomicfoundation/hardhat-ignition",
+        "@nomicfoundation/hardhat-ignition-ethers",
+        "@nomicfoundation/hardhat-network-helpers",
+        "@nomicfoundation/hardhat-toolbox",
+        "@nomicfoundation/hardhat-verify",
+        "@typechain/hardhat",
+        "hardhat-gas-reporter",
+        "solidity-coverage"
+      ],
+      "range": ">=0.1.0-rc.0",
+      "nodes": [
+        "node_modules/hardhat"
+      ],
+      "fixAvailable": false
+    },
+    "hardhat-gas-reporter": {
+      "name": "hardhat-gas-reporter",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "hardhat"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/hardhat-gas-reporter"
+      ],
+      "fixAvailable": true
+    },
+    "solidity-coverage": {
+      "name": "solidity-coverage",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "hardhat"
+      ],
+      "effects": [
+        "@nomicfoundation/hardhat-toolbox"
+      ],
+      "range": ">=0.8.0-beta.0",
+      "nodes": [
+        "node_modules/solidity-coverage"
+      ],
+      "fixAvailable": false
+    },
+    "ws": {
+      "name": "ws",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1098393,
+          "name": "ws",
+          "dependency": "ws",
+          "title": "ws affected by a DoS when handling a request with many HTTP headers",
+          "url": "https://github.com/advisories/GHSA-3h5v-q93c-6h6q",
+          "severity": "high",
+          "cwe": [
+            "CWE-476"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=7.0.0 <7.5.10"
+        }
+      ],
+      "effects": [
+        "@ethersproject/providers"
+      ],
+      "range": "7.0.0 - 7.5.9",
+      "nodes": [
+        "node_modules/@ethersproject/providers/node_modules/ws"
+      ],
+      "fixAvailable": true
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 11,
+      "moderate": 0,
+      "high": 2,
+      "critical": 16,
+      "total": 29
+    },
+    "dependencies": {
+      "prod": 281,
+      "dev": 503,
+      "optional": 12,
+      "peer": 275,
+      "peerOptional": 0,
+      "total": 788
+    }
+  }
+}
